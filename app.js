@@ -1,16 +1,8 @@
 const h1 = document.querySelector("div.minO h1");
 
-console.dir(h1);
-
-function handleTitleClick(){
-    const currentColor = h1.style.color;
-    let newColor
-    if(currentColor == 'blue'){
-        newColor = 'tomato';
-    } else {
-        newColor = 'blue';
-    }
-    h1.style.color = newColor;
+function handleTitleClick() {
+    //toggle은 class에 해당 이름이 존재하면 없애주고, 존재하지 않는다면 추가해줌 
+    h1.classList.toggle('clicked');
 }
 
 h1.addEventListener("click", handleTitleClick);
