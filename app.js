@@ -1,21 +1,32 @@
-const title = document.querySelector("div.minO h1");
+const h1 = document.querySelector("div.minO h1");
 
-console.dir(title);
+console.dir(h1);
 
 function handleTitleClick(){
-    console.log("title was clicked!");
-    title.style.color = 'blue';
+    console.log("h1 was clicked!");
+    h1.style.color = 'blue';
 }
 
 function handleMouseEnter(){
-    title.innerText = "Mouse is here!";
+    h1.innerText = "Mouse is here!";
 }
 
 function handleMouseLeave(){
-    title.innerText = "Mouse is gone!";
+    h1.innerText = "Mouse is gone!";
 }
 
-title.addEventListener("click", handleTitleClick);
+function handleWindowResize(){
+    document.body.style.backgroundColor = "tomato";
+}
 
-title.addEventListener("mouseenter", handleMouseEnter);
-title.addEventListener("mouseleave", handleMouseLeave);
+function handleWindowCopy(){
+    alert("copier!");
+}
+h1.addEventListener("click", handleTitleClick);
+
+h1.addEventListener("mouseenter", handleMouseEnter);
+h1.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+//offline , online 
