@@ -5,7 +5,9 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting")
 
-const HIDDEN_CLASSNAME = "hidden"; // 중요한 정보를 담은 것이 아니라 대문자로 작성
+// 중요한 정보를 담거나 반복 되는 경우라면 대문자로 작성
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username"; 
 // const link = document.querySelector("a");
 
 function onLoginSubmit(event) {
@@ -15,9 +17,14 @@ function onLoginSubmit(event) {
     loginForm.classList.add(HIDDEN_CLASSNAME);
     // classList는 선택된 Element에 해당 class를 넣어줌
     const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
     // 아래는 새로운 방식이며, 백틱(`)을 사용하여 ${} 대괄호 안에 넣음
-    greeting.innerText = `Hello ${username}`;
+    paintGreetings(username);
+}
+
+function paintGreetings(username) {
     greeting.classList.remove(HIDDEN_CLASSNAME);
+    greeting.innerText = `Hello ${username}`;
 }
 
 // function handleLinkClick(event) {
@@ -28,3 +35,14 @@ function onLoginSubmit(event) {
 // addEventListener는 function의 이름만 적어주면 ()없이도 브라우저가 자동으로 실행한다.
 loginForm.addEventListener("submit",onLoginSubmit)
 // link.addEventListener("click", handleLinkClick)
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null){
+    // show the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit",onLoginSubmit);
+} else {
+    // show the greetings
+    paintGreetings(savedUsername);
+}

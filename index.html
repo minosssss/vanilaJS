@@ -8,7 +8,8 @@
     <title>Momentum App</title>
 </head>
 <body>
-    <form id="login-form">
+    <form id="login-form" class="hidden"> 
+        <!-- username이 있는지 확인 후 없으면 보여주기 위해 hidden 추가 -->
         <input required maxlength="15" type="text" placeholder="What is your name?" />
         <input type="submit" value="Log In" />
     </form>
