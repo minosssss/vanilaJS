@@ -34,13 +34,13 @@ body {
   color: whitesmoke;
 }
 .temp-container svg {
-  font-size: 140%;
+  font-size: 2rem;
   margin-right: 0.5rem;
   margin-left: 1rem;
 }
 .temperature {
   width: fit-content;
-  font-size: 150%;
+  font-size: 2rem;
   font-weight: 600;
 }
 .place {
@@ -88,8 +88,8 @@ input::placeholder {
 }
 
 #clock {
-  font-size: 1050%;
-  font-weight: 500;
+  font-size: 10rem;
+  font-weight: 600;
   color: white;
   margin-bottom: 0.5rem;
   margin-top: 0;
@@ -106,7 +106,7 @@ input::placeholder {
 #greeting {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
-  font-size: 337.5%;
+  font-size: 3rem;
   font-weight: 500;
   color: white;
 }
@@ -129,7 +129,7 @@ input::placeholder {
   width: 50rem;
   height: 10rem;
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 5px;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
